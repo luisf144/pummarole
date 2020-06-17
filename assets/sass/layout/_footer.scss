@@ -1,0 +1,14 @@
+.page-footer{
+  border-top: 2px solid $color-grey-light;
+  color: #495057;
+  line-height: 1.2rem;
+  font-size: 0.95rem;
+
+  span{
+    vertical-align: sub;
+  }
+  a{
+    text-decoration: none;
+    color: $color-grey-dark;
+  }
+}

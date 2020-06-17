@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Settings - Pummarole{% endblock %}
+
+{% block body %}
+        <div class="row my-5">
+            <div class="col-6 offset-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h2 class="text-center">
+                            Settings
+                        </h2>
+
+                        {{ form_start(settingsForm) }}
+                            {{ form_widget(settingsForm) }}
+                            <input type="submit" class="btn btn-app btn-lg btn-block" value="Save">
+
+                        {{ form_end(settingsForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pummarole - Create Task{% endblock %}
+
+{% block body %}
+
+    <div class="row mt-5">
+        <div class="col-6 offset-3">
+
+            <div class="card">
+                <div class="card-body bg-light">
+                    <h2 class="text-center">
+                        Create Task
+                    </h2>
+
+                    {{
+                        include('task/_form.html.twig', {
+                            title: 'Create'
+                        })
+                    }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

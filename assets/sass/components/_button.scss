@@ -1,0 +1,9 @@
+.btn-app{
+  font-size: 1.2rem;
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover{
+    color: $color-white;
+  }
+}

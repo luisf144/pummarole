@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Pummarole{% endblock %}</title>
+
+        {# Icon page #}
+        <link rel="icon" type="image/png" href="{{ asset('build/images/logo.png') }}">
+
+        {# Import Font awesome 5 #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('app/register') }}
+            {{ encore_entry_link_tags('app/about') }}
+            {{ encore_entry_link_tags('app/home') }}
+        {% endblock %}
+    </head>
+
+    <body class="pom-phase-theme">
+        {#Header#}
+            {{ include('partials/header.html.twig') }}
+        {#endHeader#}
+
+        {#Body#}
+        <div id="section-main" class="container mt-4">
+            {#messages#}
+                {{ include('partials/messages.html.twig') }}
+            {#End messages#}
+
+            {# Content #}
+            {% block body %}{% endblock %}
+        </div>
+        {#endBody#}
+
+        {#footer#}
+            {{ include('partials/footer.html.twig') }}
+        {#End footer#}
+
+        {% block javascripts %}
+            {#FOSjs routing Bundle#}
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{{ form_start(taskForm) }}
+    <div class="row">
+        <div class="col-12">
+            {{ form_row(taskForm.name) }}
+        </div>
+        <div class="col-12">
+            {{ form_row(taskForm.description) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-app btn-lg btn-block" >
+        Save
+    </button>
+{{ form_end(taskForm) }}

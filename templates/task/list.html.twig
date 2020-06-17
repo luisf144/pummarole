@@ -1,0 +1,33 @@
+<div class="col-10 offset-1">
+    <div class="card text-center">
+        <div class="card-header">
+            <i class="fas fa-briefcase"></i> Working on:
+        </div>
+        <div class="card-body">
+            <div class="list-group" id="list-tab" role="tablist">
+                {% if tasks is empty %}
+                    <p>No Tasks found...</p>
+                {% endif %}
+
+                {% for task in tasks %}
+
+                <a class="list-group-item list-group-item-action {{ loop.first ? 'active':'' }}"
+                   data-toggle="list" href="#" data-task-id="{{ task.id }}">
+
+                    {{ task.name }}
+
+                    <span {{ task.description ? 'class="list-item-description"':'' }}>
+                        {{ task.description }}
+                    </span>
+
+                    <button class="btn btn-link btn-sm float-right delete_task" type="button">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </a>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>

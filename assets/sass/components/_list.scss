@@ -1,0 +1,26 @@
+.list-group-item {
+  .list-item-description + button {
+    i{
+      vertical-align: super;
+    }
+  }
+  button {
+    color: $color-primary;
+  }
+  &.active {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    button {
+      color: $color-white;
+    }
+  }
+}
+
+.list-group-item-action span {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: -30px;
+  color: $color-primary-light;
+  line-height: 1rem;
+}

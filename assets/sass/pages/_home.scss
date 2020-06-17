@@ -1,0 +1,38 @@
+@import "../abstracts/variables";
+
+#timer {
+  line-height: 7rem;
+  font-size: 8rem;
+  font-weight: bold;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+#section-main{
+  min-height: 70vh;
+}
+
+#btn_start{
+  margin-top: 20px;
+  width: 100px;
+  font-size: 1.2rem;
+}
+
+#btn_pause{
+  margin-top: 20px;
+  width: 100px;
+  font-size: 1.2rem;
+}
+
+#btn_reset{
+  margin-top: 20px;
+  width: 100px;
+  font-size: 1.2rem;
+}
+
+.tomato-img{
+  width: 25px;
+  vertical-align: sub;
+}

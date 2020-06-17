@@ -1,0 +1,11 @@
+@import "../abstracts/variables";
+
+#about{
+  border-top: 2px solid $color-grey-light;
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  & .display-4{
+    margin-bottom: 30px;
+  }
+}

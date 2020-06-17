@@ -1,0 +1,23 @@
+//Importing Boostrap styles
+@import "~bootstrap/scss/bootstrap";
+
+@import "base/fonts";
+
+body{
+  font-family: 'Pacifico', cursive;
+
+  &.pom-phase-theme{
+    @import "abstracts/pom-colors";
+    @import "styles";
+  }
+
+  &.sb-phase-theme{
+    @import "abstracts/sb-colors";
+    @import "styles";
+  }
+
+  &.lb-phase-theme{
+    @import "abstracts/lb-colors";
+    @import "styles";
+  }
+}

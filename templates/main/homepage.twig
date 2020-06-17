@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card mb-3">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-8 mx-auto text-center ">
+                            <button id="btn_pomodoro" class="btn btn-app">
+                                <i class="fas fa-fire"></i>
+                                Pomodoro
+                            </button>
+                            <button id="btn_shortbreak" class="btn">
+                                <i class="fas fa-coffee"></i>
+                                Short Break
+                            </button>
+                            <button id="btn_longbreak" class="btn">
+                                <i class="fas fa-pizza-slice"></i>
+                                Long Break
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="card mb-3">
+                <div class="card-body bg-light">
+
+                    <div class="row">
+                        <div class="col-md-8 mx-auto text-center">
+                            <div><span id="timer"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8 mx-auto text-center mt-3 mb-3">
+                            <button id="btn_start" class="btn btn-dark">
+                                <i class="fas fa-play"></i>
+                                Start
+                            </button>
+                            <button id="btn_pause" class="btn btn-danger">
+                                <i class="fas fa-pause"></i>
+                                Pause
+                            </button>
+                            <button id="btn_reset" class="btn btn-warning text-light">
+                                <i class="fas fa-redo"></i>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-muted text-center">
+                    Completed:
+                    <span id="pom_round">
+                        {{ currPom and currPom.pomCompleted == 0 ? currPom.pomRound : 0 }}</span>/{{ pomCycle }}
+
+                    <img src="{{ asset('build/images/tomato.png') }}" alt="tomato" class="tomato-img">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {# Section Tasks List #}
+        <div class="row mb-5">
+            {{ render(path('task_list')) }}
+        </div>
+    {# End Section Task List #}
+
+    {# Values used in JS #}
+    <div class="invisible js-cycle-val" data-cycle-value="{{ pomCycle }}"></div>
+    <div class="invisible js-pom-val" data-pom-value="{{ pom }}"></div>
+    <div class="invisible js-sb-val" data-sb-value="{{ sb }}"></div>
+    <div class="invisible js-lb-val" data-lb-value="{{ lb }}"></div>
+    <div class="invisible js-slugs-val" data-slugs-value="{{ slugsByDefault }}"></div>
+    <div class="invisible js-curr-pom" data-curr-pom="{{ currPom | json_encode() }}"></div>
+    {# End Values used in JS #}
+
+    {# Audio Alarm #}
+    <audio id="alarm">
+        <source src="{{ asset('build/audio/bell-alarm.mp3') }}" type="audio/mpeg">
+    </audio>
+    {# End Audio Alarm #}
+
+    {# Section About #}
+    {{ include('main/about.html.twig') }}
+    {# End Section About #}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}
