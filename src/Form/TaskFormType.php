@@ -17,7 +17,6 @@ class TaskFormType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Pomodoro Cycle',
                 'constraints' => [
                     new NotBlank([
                         'message' => 'The name cannot be empty.'
